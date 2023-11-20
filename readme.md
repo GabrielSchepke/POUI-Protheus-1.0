@@ -3,16 +3,16 @@
 **				How to Start Code			   		               **
 *******************************************************
 
-# INSTALAR NODE.JS
-# Seguir instalação do angular com esses comandos: https://po-ui.io/guides/getting-started
-# Abrir cmd ou power shell e executar os comandos npm i -g @angular/cli@16 , ng new my-po-project --skip-install
-# validar a versão das dependências do arquivo package.json com os da documentação do PO-UI
-# Localizar diretório da instalação do projeto, copiar o caminho do explorer e abrir no power shell,ex: cd C:\Users\gabriel.schepke\my-po-project
-# Após abrir o diretório, rodar o comando NPM install
-# Após ng add @po-ui/ng-components
-# Abrir projeto no browser localhost:4200 = ng serve
-# Abrir projeto no vscode = "code ." no power shell
-# instalar extensão do angular
+ INSTALAR NODE.JS
+ Seguir instalação do angular com esses comandos: https://po-ui.io/guides/getting-started
+ Abrir cmd ou power shell e executar os comandos npm i -g @angular/cli@16 , ng new my-po-project --skip-install
+ validar a versão das dependências do arquivo package.json com os da documentação do PO-UI
+ Localizar diretório da instalação do projeto, copiar o caminho do explorer e abrir no power shell,ex: cd C:\Users\gabriel.schepke\my-po-project
+ Após abrir o diretório, rodar o comando NPM install
+ Após ng add @po-ui/ng-components
+ Abrir projeto no browser localhost:4200 = ng serve
+ Abrir projeto no vscode = "code ." no power shell
+ instalar extensão do angular
 
 Definicão de pastas/arquivo
 ->src projeto
