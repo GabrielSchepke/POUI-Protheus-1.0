@@ -1,66 +1,81 @@
-*******************************************************
-**					PO-UI							                       **
-**				How to Start Code			   		               **
-*******************************************************
+# Guia de Configuração do PO-UI
 
- INSTALAR NODE.JS
- Seguir instalação do angular com esses comandos: https://po-ui.io/guides/getting-started
- Abrir cmd ou power shell e executar os comandos npm i -g @angular/cli@16 , ng new my-po-project --skip-install
- validar a versão das dependências do arquivo package.json com os da documentação do PO-UI
- Localizar diretório da instalação do projeto, copiar o caminho do explorer e abrir no power shell,ex: cd C:\Users\gabriel.schepke\my-po-project
- Após abrir o diretório, rodar o comando NPM install
- Após ng add @po-ui/ng-components
- Abrir projeto no browser localhost:4200 = ng serve
- Abrir projeto no vscode = "code ." no power shell
- instalar extensão do angular
+## 1. Instale o Node.js
+Siga as instruções de instalação do Angular utilizando os comandos fornecidos em [PO-UI Getting Started](https://po-ui.io/guides/getting-started).
 
-Definicão de pastas/arquivo
-->src projeto
-->pasta app: components de estilo, html etc
-->component.ts lógica aplicação
+## 2. Configure o Projeto Angular
+Abra o CMD ou PowerShell e execute os seguintes comandos:
 
-#instalar npm i @totvs/protheus-lib-core ( Caso ocorra erro de versão de dependências ex: 
-ERESOLVE
-npm ERR! ERESOLVE unable to resolve dependency tree
-npm ERR!
-npm ERR! While resolving: my-po-project@0.0.0
-npm ERR! Found: @angular/animations@16.2.5
-npm ERR! node_modules/@angular/animations
-npm ERR!   @angular/animations@"^16.2.0" from the root project
-npm ERR!
-npm ERR! Could not resolve dependency:
-npm ERR! peer @angular/animations@"^15.2.9" from @totvs/protheus-lib-core@15.0.0
-npm ERR! node_modules/@totvs/protheus-lib-core
-npm ERR!   @totvs/protheus-lib-core@"*" from the root project )
+-npm i -g @angular/cli@16
+-ng new my-po-project --skip-install
 
-Rodar o comando usando --force : npm i @totvs/protheus-lib-core --force
+Certifique-se de que as versões das dependências no seu arquivo package.json correspondam às da documentação do PO-UI.
 
-#Npm install subsink --force
+Navegue até o diretório do projeto utilizando o PowerShell, por exemplo:
+cd C:\Users\gabriel.schepke\my-po-project
 
-tema do protheus : npm i @totvs/po-theme@14 --force 
+Execute o comando:
+npm install
 
-alterar angular.json :
+Em seguida, adicione o PO-UI ao seu projeto:
+ng add @po-ui/ng-components
 
-"styles":  [
-              "node_modules/@totvs/po-theme/css/po-theme-default-variables.min.css",
-              "node_modules/@totvs/po-theme/css/po-theme-default.min.css",
-              "node_modules/@po-ui/style/css/po-theme-core.min.css"
-              ],
-			  
-			  
-Ao compilar o .app pode dar erro no tamanho, alterar no angular.json as propriedades
- "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "1500kb",
-                  "maximumError": "2mb"
-                }
+3. Inicie o Projeto
+Abra o projeto no navegador usando:
+ng serve
+Ou abra-o no Visual Studio Code com:
+code .
 
+Certifique-se de instalar a extensão Angular no VS Code.
+
+4. Resolva Conflitos de Versão de Dependências:
+Em caso de erros de versão de dependências, execute o seguinte comando com a flag --force:
+npm i @totvs/protheus-lib-core --force
+Adicionalmente, instale o pacote subsink:
+npm install subsink --force
+
+5. Instale o Tema do Protheus
+npm i @totvs/po-theme@14 --force
+Atualize o angular.json:
+
+json
  
+"styles": [
+  "node_modules/@totvs/po-theme/css/po-theme-default-variables.min.css",
+  "node_modules/@totvs/po-theme/css/po-theme-default.min.css",
+  "node_modules/@po-ui/style/css/po-theme-core.min.css"
+],
 
+6. Ajuste as Configurações de Compilação do Angular
+Se a compilação do aplicativo resultar em erros de tamanho, modifique o arquivo angular.json:
 
+json
  
-#editar settings.json no diretório em C:\Users\SEU USUÁRIO\AppData\Roaming\Code\User\settings.json alterando a propriedade "totvsLanguageServer.folder.extensionsAllowed" e adicionando a extensão ".App".
-#Caso não encontre o arquivo no diretório acima abra a extensão tds, clique em configurações e no primeiro item na opção "Editar em settings.json".
+"configurations": {
+  "production": {
+    "budgets": [
+      {
+        "type": "initial",
+        "maximumWarning": "1500kb",
+        "maximumError": "2mb"
+      }
+    ]
+  }
+}
+
+7. Atualize as Configurações do VS Code
+Edite settings.json no diretório C:\Users\SEU USUÁRIO\AppData\Roaming\Code\User\settings.json, alterando a propriedade totvsLanguageServer.folder.extensionsAllowed e adicionando a extensão ".App". 
+Se o arquivo não for encontrado, abra a extensão TDS, clique em configurações e escolha "Editar em settings.json".
+
+Observações Adicionais:
+No binário do Protheus, certifique-se de que a seção [General] e a tag app_environment=environment estejam presentes além das instancias de MPP ativas. 
+Se encontrar erros de compilação, comente as tag, reinicie o ambiente, compile a função do usuário e o arquivo Angular, em seguida, descomente a tag e reinicie o ambiente novamente.
+
+Ao construir o projeto Angular, uma pasta "dist" é gerada. 
+Compacte a pasta interna com o nome do projeto e altere a extensão para ".app". 
+Este arquivo deve ser chamado dentro da Função do Usuário usando FWCallApp("nome-do-projeto").
+
+Ex: PS C:\Users\gabriel.schepke\Desktop\poui-protheus-v1\POUI-Protheus-1.0\poui-protheus> ng build := irá criar dentro da pasta poui-protheus uma pasta dist, e dentro da  dist uma pasta chamada poui-protheus, 
+essa devera ser zipada com a extensão ".app" .
+O nome não deve ser redefinido e não pode conter números.
+A função FWCallApp devera chamar ela da seguinte forma " FWCallApp("poui-protheus")".
