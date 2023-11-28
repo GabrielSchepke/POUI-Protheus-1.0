@@ -20,7 +20,7 @@ npm install
 Em seguida, adicione o PO-UI ao seu projeto:
 ng add @po-ui/ng-components
 
-3. Inicie o Projeto
+## 3. Inicie o Projeto
 Abra o projeto no navegador usando:
 ng serve
 Ou abra-o no Visual Studio Code com:
@@ -28,13 +28,13 @@ code .
 
 Certifique-se de instalar a extensão Angular no VS Code.
 
-4. Resolva Conflitos de Versão de Dependências:
+## 4. Resolva Conflitos de Versão de Dependências:
 Em caso de erros de versão de dependências, execute o seguinte comando com a flag --force:
 npm i @totvs/protheus-lib-core --force
 Adicionalmente, instale o pacote subsink:
 npm install subsink --force
 
-5. Instale o Tema do Protheus
+## 5. Instale o Tema do Protheus
 npm i @totvs/po-theme@14 --force
 Atualize o angular.json:
 
@@ -46,7 +46,7 @@ json
   "node_modules/@po-ui/style/css/po-theme-core.min.css"
 ],
 
-6. Ajuste as Configurações de Compilação do Angular
+## 6. Ajuste as Configurações de Compilação do Angular
 Se a compilação do aplicativo resultar em erros de tamanho, modifique o arquivo angular.json:
 
 json
@@ -63,11 +63,11 @@ json
   }
 }
 
-7. Atualize as Configurações do VS Code
+## 7. Atualize as Configurações do VS Code
 Edite settings.json no diretório C:\Users\SEU USUÁRIO\AppData\Roaming\Code\User\settings.json, alterando a propriedade totvsLanguageServer.folder.extensionsAllowed e adicionando a extensão ".App". 
 Se o arquivo não for encontrado, abra a extensão TDS, clique em configurações e escolha "Editar em settings.json".
 
-Observações Adicionais:
+## Observações Adicionais:
 No binário do Protheus, certifique-se de que a seção [General] e a tag app_environment=environment estejam presentes além das instancias de MPP ativas. 
 Se encontrar erros de compilação, comente as tag, reinicie o ambiente, compile a função do usuário e o arquivo Angular, em seguida, descomente a tag e reinicie o ambiente novamente.
 
