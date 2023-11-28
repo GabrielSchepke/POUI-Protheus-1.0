@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { PoSelectWrapperComponent } from './po-select-wrapper.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PoSelectWrapperComponent
   ],
   imports: [
     BrowserModule,
