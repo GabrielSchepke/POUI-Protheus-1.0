@@ -6,8 +6,8 @@ Siga as instruções de instalação do Angular utilizando os comandos fornecido
 ## 2. Configure o Projeto Angular
 Abra o CMD ou PowerShell e execute os seguintes comandos:
 
--npm i -g @angular/cli@16
--ng new my-po-project --skip-install
+npm i -g @angular/cli@17
+ng new my-po-project --skip-install
 
 Certifique-se de que as versões das dependências no seu arquivo package.json correspondam às da documentação do PO-UI.
 
